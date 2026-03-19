@@ -17,8 +17,6 @@ Por favor, escribe en impersonal las respuestas.
 
 ## 1. ¿Cuáles son las cuatro características básicas de la programación orientada a objetos? Describe brevemente cada una
 
-### Respuesta
-
 La programación orientada a objetos se apoya en cuatro pilares: **encapsulamiento**, **abstracción**, **herencia** y **polimorfismo**. El encapsulamiento oculta el estado interno del objeto y expone operaciones controladas, separando interfaz pública e implementación para proteger la integridad de los datos y reducir el acoplamiento.
 
 La abstracción modela conceptos destacando sus rasgos esenciales y omitiendo detalles irrelevantes, lo que simplifica el razonamiento y permite trabajar con interfaces estables. La herencia reutiliza y extiende comportamiento de clases existentes, organizando jerarquías. El polimorfismo posibilita que una misma operación (interfaz) tenga distintas implementaciones según el tipo concreto, favoreciendo extensibilidad.
@@ -26,8 +24,6 @@ La abstracción modela conceptos destacando sus rasgos esenciales y omitiendo de
 ---
 
 ## 2. Cita cuatro lenguajes populares que permitan la programación orientada a objetos
-
-### Respuesta
 
 Cuatro lenguajes populares con soporte de POO son **Java**, **C++**, **Python** y **C#**. Java y C# promueven un uso sistemático de clases y objetos, lo que facilita la adopción de buenas prácticas orientadas a objetos desde el inicio.
 
@@ -37,7 +33,6 @@ C++ combina paradigmas (estructurado, genérico y orientado a objetos), permitie
 
 ## 3. Los paradigmas anteriores a la POO, ¿Qué es la **programación estructurada**? y, todavía mejor, ¿Qué es la **programación modular**?
 
-### Respuesta
 
 La **programación estructurada** organiza el código mediante secuencias, decisiones y bucles, evitando saltos incontrolados como `goto`. Este enfoque promueve legibilidad, corrección y mantenimiento, y se apoya en la descomposición del problema en funciones bien definidas.
 
@@ -47,7 +42,6 @@ La **programación modular** divide el sistema en módulos cohesionados con resp
 
 ## 4. ¿Qué tres elementos definen a un objeto en programación orientada a objetos?
 
-### Respuesta
 
 Un objeto se caracteriza por **estado**, **comportamiento** e **identidad**. El **estado** lo componen los atributos que describen su información interna, la cual puede variar durante la ejecución.
 
@@ -57,8 +51,6 @@ El **comportamiento** se materializa en los métodos que operan sobre el estado 
 
 ## 5. ¿Qué es una clase? ¿Es lo mismo que un objeto? ¿Qué es una instancia? ¿Todos los lenguajes orientados a objetos manejan el concepto de clase?
 
-### Respuesta
-
 Una **clase** es una plantilla que define atributos y métodos, es decir, la estructura y el comportamiento compartido por sus objetos. No es lo mismo que un objeto: un objeto es una **instancia** concreta creada a partir de la clase, con estado e identidad propios.
 
 Si bien muchos lenguajes de POO usan clases (Java, C#, C++), existen enfoques **basados en prototipos** (como el modelo original de JavaScript) que prescinden de clases formales. Por tanto, la orientación a objetos no exige necesariamente el concepto de clase.
@@ -66,8 +58,6 @@ Si bien muchos lenguajes de POO usan clases (Java, C#, C++), existen enfoques **
 ---
 
 ## 6. ¿Dónde se almacenan en memoria los objetos? ¿Es igual en todos los lenguajes? ¿Qué es la **recolección de basura**? 
-
-### Respuesta
 
 La ubicación en memoria depende del lenguaje y del modo de creación. En **C++**, un objeto local puede residir en la **pila** (stack), mientras que con `new` se ubica en el **montón** (heap). En **Java**, los objetos se crean siempre en el **montón**, gestionado por la máquina virtual.
 
