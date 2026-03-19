@@ -77,8 +77,6 @@ La **recolección de basura** (garbage collection) libera automáticamente la me
 
 ## 7. ¿Qué es un método? ¿Qué es la **sobrecarga de métodos**? 
 
-### Respuesta
-
 Un **método** es una función asociada a una clase que define parte del comportamiento de sus objetos. Puede acceder y modificar el estado interno del objeto, encapsulando la lógica relacionada con ese tipo.
 
 La **sobrecarga de métodos** permite declarar varios métodos con el mismo nombre pero firmas distintas (parámetros diferentes). La resolución elige cuál invocar según los argumentos, ofreciendo múltiples variantes de una misma operación bajo un nombre coherente.
@@ -86,8 +84,6 @@ La **sobrecarga de métodos** permite declarar varios métodos con el mismo nomb
 ---
 
 ## 8. Ejemplo mínimo de clase en Java, que se llame Punto, con dos atributos, x e y, con un método que se llame `calculaDistanciaAOrigen`, que calcule la distancia a la posición 0,0. Por sencillez, los atributos deben tener visibilidad por defecto. Crea además un ejemplo de uso con una instancia y uso del método
-
-### Respuesta
 
 ```java
 class Punto {
@@ -107,10 +103,9 @@ public class Main {
         System.out.println(p.calculaDistanciaAOrigen()); // 5.0
     }
 }
+```
 
 ## 9. ¿Cuál es el punto de entrada en un programa en Java? ¿Qué es `static` y para qué vale? ¿Sólo se emplea para ese método `main`? ¿Para qué se combina con `final`?
-
-### Respuesta
 
 El punto de entrada de un programa en Java es el método **`public static void main(String[] args)`**. La JVM busca exactamente esa firma para iniciar la ejecución. El método es `public` para ser accesible desde la JVM, `static` para poder invocarse sin instancia, `void` porque no devuelve resultado, y recibe un arreglo de cadenas con argumentos de línea de comandos.
 
@@ -120,8 +115,6 @@ La palabra clave **`static`** indica pertenencia a la **clase** y no a una insta
 
 ## 10. Intenta ejecutar un poco de Java de forma básica, con los comandos `javac` y `java`. ¿Cómo podemos compilar el programa y ejecutarlo desde linea de comandos? ¿Java es compilado? ¿Qué es la **máquina virtual**? ¿Qué es el *byte-code* y los ficheros `.class`?
 
-### Respuesta
-
 La compilación básica desde consola se realiza con `javac Nombre.java`, lo que genera uno o varios archivos **`.class`** en la misma carpeta. Para ejecutar, se usa `java NombreDeLaClase` (sin la extensión), asumiendo que el archivo `.class` está en el classpath actual. Si hay paquetes, se debe invocar desde el directorio raíz del paquete o ajustar el classpath.
 
 Java se **compila a bytecode**, un formato intermedio independiente de la plataforma. Ese bytecode vive en los **ficheros `.class`** y es ejecutado por la **Máquina Virtual de Java (JVM)**, que lo interpreta/JIT-optimiza a código nativo en tiempo de ejecución. Este diseño proporciona **portabilidad**: se compila una vez y se ejecuta en cualquier sistema con una JVM compatible.
@@ -129,8 +122,6 @@ Java se **compila a bytecode**, un formato intermedio independiente de la plataf
 ---
 
 ## 11. En el código anterior de la clase `Punto` ¿Qué es `new`? ¿Qué es un **constructor**? Pon un ejemplo de constructor en una clase `Empleado` que tenga DNI, nombre y apellidos
-
-### Respuesta
 
 La palabra clave **`new`** crea un objeto en el **montón (heap)** y devuelve una **referencia** a la nueva instancia. Durante este proceso se invoca un **constructor**, que es un método especial con el mismo nombre que la clase y sin tipo de retorno, responsable de **inicializar** el estado del objeto.
 
@@ -148,11 +139,10 @@ class Empleado {
         this.apellidos = apellidos;
     }
 }
+```
 
 
 ## 12. ¿Qué es la referencia `this`? ¿Se llama igual en todos los lenguajes? Pon un ejemplo del uso de `this` en la clase `Punto`
-
-### Respuesta
 
 La referencia **`this`** señala al **objeto actual** dentro de un método de instancia o un constructor. Sirve para **desambiguar** entre atributos y parámetros con el mismo nombre, para **encadenar constructores** (`this(...)`) y para **pasar** la propia referencia del objeto a otros métodos. Aunque muchas veces podría omitirse al acceder a campos de instancia, su uso explícito mejora la **legibilidad** y evita confusiones cuando hay nombres similares en el ámbito local.
 
@@ -186,10 +176,9 @@ class Punto {
         return Math.sqrt(dx * dx + dy * dy);
     }
 }
+```
 
 ## 13. Añade ahora otro nuevo método que se llame `distanciaA`, que reciba un `Punto` como parámetro y calcule la distancia entre `this` y el punto proporcionado
-
-### Respuesta
 
 Es natural definir un método de instancia que calcule la **distancia euclídea** entre el objeto actual y otro `Punto`. El método recibe un parámetro del mismo tipo, resta coordenadas, y aplica la raíz cuadrada de la suma de cuadrados. Conceptualmente, se trabaja con el vector diferencia `⟨dx, dy⟩` y su norma.
 
@@ -206,10 +195,9 @@ class Punto {
         return Math.sqrt(dx * dx + dy * dy);
     }
 }
+```
 
 ## 14. El paso del `Punto` como parámetro a un método, es **por copia** o **por referencia**, es decir, si se cambia el valor de algún atributo del punto pasado como parámetro, dichos cambios afectan al objeto fuera del método? ¿Qué ocurre si en vez de un `Punto`, se recibiese un entero (`int`) y dicho entero se modificase dentro de la función?
-
-### Respuesta
 
 En Java, el paso de parámetros es siempre **por valor**, pero lo que se copia depende del tipo. En el caso de tipos primitivos como `int`, se copia el **valor literal**, por lo que el método recibe una copia independiente. Al modificar el parámetro dentro del método, el valor original del llamador permanece inalterado, de forma similar al comportamiento de C con primitivas.
 
@@ -218,8 +206,6 @@ En el caso de objetos como `Punto`, lo que se copia es la **referencia**, no el 
 ---
 
 ## 15. ¿Qué es el método `toString()` en Java? ¿Existe en otros lenguajes? Pon un ejemplo de `toString()` en la clase `Punto` en Java
-
-### Respuesta
 
 El método `toString()` devuelve una **representación textual** del objeto y se hereda de la clase base `Object`. Aunque su implementación por defecto suele ser poco informativa, es habitual sobrescribirlo para mostrar de forma clara y comprensible el estado interno del objeto. Al imprimir un objeto con `System.out.println`, Java invoca automáticamente este método.
 
@@ -235,10 +221,9 @@ class Punto {
         return "(" + x + ", " + y + ")";
     }
 }
+```
 
 ## 16. Reflexiona: ¿una clase es como un `struct` en C? ¿Qué le falta al `struct` para ser como una clase y las variables de ese tipo ser instancias?
-
-### Respuesta
 
 Un `struct` en C comparte con una clase la capacidad de agrupar datos bajo un mismo tipo, pero no incorpora los mecanismos propios de la programación orientada a objetos. Le faltan elementos fundamentales como **métodos asociados**, **encapsulamiento**, **constructores**, **destructores**, **herencia** y **polimorfismo**, lo que impide que pueda mantener lógica y restricciones internas del mismo modo que una clase.
 
@@ -247,8 +232,6 @@ Además, un `struct` no ofrece control de visibilidad (`private`, `public`) ni l
 ---
 
 ## 17. Quitemos un poco de magia a todo esto: ¿Como se podría “emular”, con `struct` en C, la clase `Punto`, con su función para calcular la distancia al origen? ¿Qué ha pasado con `this`?
-
-### Respuesta
 
 Para emular una clase en C, puede definirse un `struct` que contenga los datos y una función externa que reciba un puntero al `struct` para operar sobre él. De este modo, se logra un comportamiento parecido al de un “método”, aunque la relación entre datos y funciones no está integrada en el lenguaje, sino establecida manualmente por el programador. Esto permite implementar cierta lógica asociada, pero sin encapsulación ni características de orientación a objetos.
 
@@ -265,3 +248,4 @@ typedef struct {
 double calculaDistanciaAOrigen(const Punto* p) {
     return sqrt((double)p->x * p->x + (double)p->y * p->y);
 }
+```
